@@ -1,0 +1,258 @@
+.result-screen {
+    position: relative;
+    overflow: hidden;
+}
+
+.result-content {
+    width: 100%;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-xl);
+}
+
+/* 评价头部 */
+.result-header {
+    text-align: center;
+}
+
+.result-emoji {
+    font-size: 4rem;
+    display: block;
+    margin-bottom: var(--spacing-md);
+}
+
+.result-title {
+    font-size: var(--font-size-2xl);
+    font-weight: 700;
+    color: var(--color-text-primary);
+}
+
+/* 成绩卡片 */
+.result-card {
+    width: 100%;
+    padding: var(--spacing-xl);
+}
+
+.score-section {
+    display: flex;
+    justify-content: space-around;
+    gap: var(--spacing-md);
+}
+
+.score-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-xs);
+}
+
+.score-label {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-secondary);
+}
+
+.score-value {
+    font-size: var(--font-size-xl);
+    font-weight: 700;
+}
+
+.score-correct {
+    color: var(--color-success);
+}
+
+.score-separator {
+    color: var(--color-text-muted);
+    margin: 0 2px;
+}
+
+.score-total {
+    color: var(--color-text-secondary);
+}
+
+.accuracy.perfect {
+    color: var(--color-success);
+    text-shadow: 0 0 10px var(--color-success);
+}
+
+.time {
+    color: var(--color-primary-light);
+}
+
+.level-result {
+    margin-top: var(--spacing-lg);
+    padding-top: var(--spacing-lg);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    text-align: center;
+    font-size: var(--font-size-lg);
+    font-weight: 600;
+}
+
+.level-pass {
+    color: var(--color-success);
+}
+
+.level-fail {
+    color: var(--color-text-secondary);
+}
+
+/* 奖励区域 */
+.reward-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-md);
+}
+
+.reward-section.new-card .reward-card {
+    animation: cardReveal 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
+}
+
+@keyframes cardReveal {
+    0% {
+        opacity: 0;
+        transform: scale(0) rotateY(180deg);
+    }
+
+    50% {
+        transform: scale(1.2) rotateY(90deg);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1) rotateY(0deg);
+    }
+}
+
+.reward-label {
+    font-size: var(--font-size-lg);
+    font-weight: 600;
+    color: var(--rarity-legendary);
+}
+
+.reward-card {
+    width: 120px;
+    height: 160px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(145deg, var(--color-bg-card), var(--color-bg-secondary));
+}
+
+.reward-card .card-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-sm);
+    padding: var(--spacing-md);
+}
+
+.card-emoji {
+    font-size: 3rem;
+}
+
+.card-name {
+    font-size: var(--font-size-md);
+    font-weight: 700;
+    text-align: center;
+}
+
+.card-rarity {
+    font-size: var(--font-size-xs);
+    padding: 2px 8px;
+    border-radius: var(--radius-full);
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.reward-card.common .card-rarity {
+    color: var(--rarity-common);
+}
+
+.reward-card.rare .card-rarity {
+    color: var(--rarity-rare);
+}
+
+.reward-card.epic .card-rarity {
+    color: var(--rarity-epic);
+}
+
+.reward-card.legendary .card-rarity {
+    color: var(--rarity-legendary);
+}
+
+.reward-card.mythic .card-rarity {
+    color: var(--rarity-mythic);
+}
+
+.card-description {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-secondary);
+    text-align: center;
+    font-style: italic;
+}
+
+/* 操作按钮 */
+.result-actions {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+    width: 100%;
+}
+
+.result-actions .btn {
+    width: 100%;
+}
+
+/* 彩带效果 */
+.confetti-container {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 100;
+    overflow: hidden;
+}
+
+.confetti-container::before {
+    content: '🎉';
+    position: absolute;
+    font-size: 2rem;
+    animation: confetti1 2s ease-out forwards;
+    left: 20%;
+}
+
+.confetti-container::after {
+    content: '🎊';
+    position: absolute;
+    font-size: 2rem;
+    animation: confetti2 2s ease-out forwards;
+    right: 20%;
+}
+
+@keyframes confetti1 {
+    0% {
+        top: -50px;
+        opacity: 1;
+        transform: rotate(0deg);
+    }
+
+    100% {
+        top: 100%;
+        opacity: 0;
+        transform: rotate(720deg);
+    }
+}
+
+@keyframes confetti2 {
+    0% {
+        top: -50px;
+        opacity: 1;
+        transform: rotate(0deg);
+    }
+
+    100% {
+        top: 100%;
+        opacity: 0;
+        transform: rotate(-720deg);
+    }
+}

@@ -1,0 +1,112 @@
+.settings-screen {
+    overflow-y: auto;
+}
+
+.settings-content {
+    width: 100%;
+    max-width: 500px;
+}
+
+.settings-content .back-btn {
+    position: fixed;
+    top: var(--spacing-lg);
+    left: var(--spacing-lg);
+    background: var(--color-bg-card);
+    border: none;
+    color: var(--color-text-primary);
+    padding: var(--spacing-sm) var(--spacing-md);
+    border-radius: var(--radius-md);
+    font-size: var(--font-size-md);
+    cursor: pointer;
+    transition: all var(--transition-normal);
+    z-index: 10;
+}
+
+.settings-content .back-btn:hover {
+    background: var(--color-primary);
+    transform: translateX(-3px);
+}
+
+/* 设置列表 */
+.settings-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+    margin-top: var(--spacing-lg);
+}
+
+.settings-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--spacing-lg);
+}
+
+.setting-info {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+}
+
+.setting-icon {
+    font-size: 1.5rem;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: var(--radius-md);
+}
+
+.setting-text {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xs);
+}
+
+.setting-label {
+    font-size: var(--font-size-md);
+    font-weight: 600;
+}
+
+.setting-description {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-muted);
+}
+
+/* 关于区域 */
+.about-section {
+    margin-top: var(--spacing-xl);
+    text-align: center;
+}
+
+.about-title {
+    font-size: var(--font-size-lg);
+    margin-bottom: var(--spacing-md);
+}
+
+.about-text {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-secondary);
+    line-height: 1.6;
+    margin-bottom: var(--spacing-md);
+}
+
+.about-version {
+    font-size: var(--font-size-xs);
+    color: var(--color-text-muted);
+}
+
+/* 响应式 */
+@media (max-width: 400px) {
+    .setting-info {
+        gap: var(--spacing-sm);
+    }
+
+    .setting-icon {
+        width: 36px;
+        height: 36px;
+        font-size: 1.25rem;
+    }
+}

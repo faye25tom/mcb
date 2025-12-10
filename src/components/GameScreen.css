@@ -1,0 +1,193 @@
+.game-screen {
+    padding: var(--spacing-md);
+}
+
+.game-content {
+    width: 100%;
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-lg);
+}
+
+/* 顶部信息栏 */
+.game-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-lg);
+    position: relative;
+}
+
+.game-header .back-btn {
+    position: absolute;
+    left: 0;
+    width: 40px;
+    height: 40px;
+    border-radius: var(--radius-full);
+    background: var(--color-bg-card);
+    border: none;
+    color: var(--color-text-primary);
+    font-size: var(--font-size-lg);
+    cursor: pointer;
+    transition: all var(--transition-normal);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.game-header .back-btn:hover {
+    background: var(--color-error);
+}
+
+.level-info {
+    background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+    padding: var(--spacing-sm) var(--spacing-md);
+    border-radius: var(--radius-md);
+    font-weight: 600;
+    font-size: var(--font-size-md);
+}
+
+.game-header .timer {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    padding: var(--spacing-sm) var(--spacing-lg);
+}
+
+.timer-label {
+    font-size: var(--font-size-md);
+    color: var(--color-text-secondary);
+}
+
+.timer-value {
+    font-size: var(--font-size-xl);
+    font-weight: 700;
+    font-variant-numeric: tabular-nums;
+}
+
+.timer-icon {
+    font-size: var(--font-size-lg);
+}
+
+/* 主游戏区域 */
+.game-main {
+    display: flex;
+    gap: var(--spacing-lg);
+    align-items: flex-start;
+    justify-content: center;
+}
+
+/* 网格容器 */
+.grid-container {
+    flex: 1;
+    max-width: 350px;
+    aspect-ratio: 1;
+}
+
+.game-grid {
+    display: grid;
+    gap: 8px;
+    width: 100%;
+    height: 100%;
+    padding: var(--spacing-md);
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: var(--radius-lg);
+    border: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+.game-grid .grid-cell {
+    min-width: 0;
+    min-height: 0;
+}
+
+.game-grid .color-block {
+    width: 100%;
+    height: 100%;
+}
+
+/* 素材区 */
+.blocks-container {
+    width: 100px;
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+}
+
+.blocks-title {
+    text-align: center;
+    font-size: var(--font-size-sm);
+    color: var(--color-text-secondary);
+    font-weight: 600;
+}
+
+.blocks-area {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+    padding: var(--spacing-md);
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: var(--radius-lg);
+    border: 2px dashed rgba(255, 255, 255, 0.1);
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+.draggable-block {
+    width: 60px;
+    height: 60px;
+    flex-shrink: 0;
+    touch-action: none;
+}
+
+.draggable-block.distraction {
+    box-shadow: 0 0 10px rgba(239, 68, 68, 0.5);
+}
+
+/* 确认按钮 */
+.confirm-btn {
+    align-self: center;
+    margin-top: var(--spacing-md);
+}
+
+/* 移动端布局 */
+@media (max-width: 500px) {
+    .game-main {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .grid-container {
+        max-width: 280px;
+    }
+
+    .blocks-container {
+        width: 100%;
+        max-width: 300px;
+    }
+
+    .blocks-area {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        max-height: none;
+        gap: var(--spacing-md);
+    }
+
+    .draggable-block {
+        width: 50px;
+        height: 50px;
+    }
+}
+
+/* 网格大小自适应 */
+@media (max-width: 400px) {
+    .game-grid {
+        gap: 6px;
+        padding: var(--spacing-sm);
+    }
+
+    .grid-container {
+        max-width: 240px;
+    }
+}

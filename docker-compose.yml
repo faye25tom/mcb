@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  mcb:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: memory-color-blocks
+    ports:
+      - "80:80"
+    restart: always
+    healthcheck:
+      test: [ "CMD", "wget", "--no-verbose", "--tries=1", "--spider", "http://localhost/" ]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 10s
