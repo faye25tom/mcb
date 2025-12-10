@@ -301,38 +301,55 @@ body {
   }
 }
 
-/* 色块颜色 - 增加特异性确保覆盖 */
+/* 色块颜色 - iOS Safari 兼容 */
 .color-block.block-red {
-  background: linear-gradient(135deg, var(--block-red) 0%, #dc2626 100%) !important;
+  background: #ef4444 !important;
+  background: -webkit-linear-gradient(315deg, #ef4444 0%, #dc2626 100%) !important;
+  background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%) !important;
 }
 
 .color-block.block-blue {
-  background: linear-gradient(135deg, var(--block-blue) 0%, #2563eb 100%) !important;
+  background: #3b82f6 !important;
+  background: -webkit-linear-gradient(315deg, #3b82f6 0%, #2563eb 100%) !important;
+  background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%) !important;
 }
 
 .color-block.block-green {
-  background: linear-gradient(135deg, var(--block-green) 0%, #16a34a 100%) !important;
+  background: #22c55e !important;
+  background: -webkit-linear-gradient(315deg, #22c55e 0%, #16a34a 100%) !important;
+  background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%) !important;
 }
 
 .color-block.block-yellow {
-  background: linear-gradient(135deg, var(--block-yellow) 0%, #ca8a04 100%) !important;
+  background: #eab308 !important;
+  background: -webkit-linear-gradient(315deg, #eab308 0%, #ca8a04 100%) !important;
+  background: linear-gradient(135deg, #eab308 0%, #ca8a04 100%) !important;
 }
 
 .color-block.block-purple {
-  background: linear-gradient(135deg, var(--block-purple) 0%, #9333ea 100%) !important;
+  background: #a855f7 !important;
+  background: -webkit-linear-gradient(315deg, #a855f7 0%, #9333ea 100%) !important;
+  background: linear-gradient(135deg, #a855f7 0%, #9333ea 100%) !important;
 }
 
 .color-block.block-orange {
-  background: linear-gradient(135deg, var(--block-orange) 0%, #ea580c 100%) !important;
+  background: #f97316 !important;
+  background: -webkit-linear-gradient(315deg, #f97316 0%, #ea580c 100%) !important;
+  background: linear-gradient(135deg, #f97316 0%, #ea580c 100%) !important;
 }
 
 .color-block.block-pink {
-  background: linear-gradient(135deg, var(--block-pink) 0%, #db2777 100%) !important;
+  background: #ec4899 !important;
+  background: -webkit-linear-gradient(315deg, #ec4899 0%, #db2777 100%) !important;
+  background: linear-gradient(135deg, #ec4899 0%, #db2777 100%) !important;
 }
 
 .color-block.block-cyan {
-  background: linear-gradient(135deg, var(--block-cyan) 0%, #0891b2 100%) !important;
+  background: #06b6d4 !important;
+  background: -webkit-linear-gradient(315deg, #06b6d4 0%, #0891b2 100%) !important;
+  background: linear-gradient(135deg, #06b6d4 0%, #0891b2 100%) !important;
 }
+
 
 /* 空格子 */
 .grid-cell {
